@@ -1,0 +1,79 @@
+﻿@keyframes label {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: invert(10%);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes Create_wrap_open {
+    0% {
+        visibility: hidden;
+    }
+
+    1% {
+        visibility: visible;
+        top: -100%;
+    }
+
+    100% {
+        visibility: visible;
+        top: 0%;
+    }
+}
+@keyframes Create_wrap_close {
+    0% {
+        visibility: visible;
+        top: 0%;
+    }
+
+    99% {
+        visibility:visible;
+        top: -100%;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+
+@keyframes sort_open {
+    0% {
+        visibility: hidden;
+    }
+
+    1% {
+        visibility: visible;
+        top: -100%;
+    }
+
+    100% {
+        visibility: visible;
+        top: 80px;
+    }
+}
+
+@keyframes sort_close {
+    0% {
+        visibility: visible;
+        top: 80px;
+    }
+
+    99% {
+        visibility: visible;
+        top: -100px;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+

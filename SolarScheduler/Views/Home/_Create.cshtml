@@ -1,0 +1,40 @@
+﻿@{var createNote = new SolarScheduler.Models.Note();
+
+
+    <div class="container Create_wrap">
+        <form class="create_form" asp-action="create" asp-controller="home">
+            <div class="form-group">
+                <label asp-for="@createNote.Title" class="control-label">* Title</label>
+                <input asp-for="@createNote.Title" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label asp-for="@createNote.Text" class="control-label">Text</label>
+                <textarea asp-for="@createNote.Text" type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 63px;"></textarea>
+            </div>
+            <div class="form_flex">
+                <div class="form-group">
+                    <label asp-for="@createNote.Select" class="control-label">Importance</label>
+                    <select asp-for="@createNote.Select" class="control-label Input_set">
+                        <option>none</option>
+                        <option>important</option>
+                        <option>not_important</option>
+                    </select>
+                </div>
+                <span>     </span>
+
+                <div class="form-group">
+                    <label asp-for="@createNote.Time" class="control-label">Time</label>
+                    <input asp-for="@createNote.Time" class="control-label datetimepicker" type="text" />
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn_Add_Card" />
+            </div>
+            <div class="close_CreateMenu pointer close">Close</div>
+
+        </form>
+    </div>
+
+}

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SolarScheduler</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/animations.css" />
+    <link rel="stylesheet" href="~/css/jquery.datetimepicker.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="preloader"></div>
+    <div class="background"></div>
+    <header>
+        <div class="container header_container">
+            <a asp-area="" asp-controller="Home" asp-action="Index"><img class="logo" src="~/img/Logo.svg" alt="logo"></a>
+            <div class="sort pointer openSort"><i class="fas fa-sort"></i></div>
+            <div class="header_add pointer open">Create</div>
+        </div>
+
+    </header>
+    <div class="container main_content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/moment.js"></script>
+    <script src="~/js/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/script.js"></script>
+    <script src="~/js/index.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

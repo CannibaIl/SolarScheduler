@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SolarScheduler.Models.Note>
+
+    <div class="button-group container sort-by-button-group">
+       
+            <button class="button is-checked" data-sort-value="ID_min_max"><i class="fas fa-hourglass-start"></i></button>
+            <button class="button" data-sort-value="ID_max_min"><i class="fas fa-hourglass-end"></i></button>
+            <button class="button" data-sort-value="CreationDateSort"><i class="fas fa-edit"></i></button>
+            <button class="button" data-sort-value="dueDate"><i class="fas fa-stopwatch"></i></button>
+            <button class="button" data-sort-value="todoTitle"><i class="fas fa-heading"></i></button>
+            <button class="button" data-sort-value="card_box_label"><i class="fas fa-exclamation-triangle"></i></button>
+
+    </div>
+
+    @await Html.PartialAsync("_Create")
+
+    <div class="card-content">
+
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-6 todo-wrap">
+                <div class="todo-card">
+                    <p class="ID hiden">@item.Id</p>
+                    <p class="label_none">@item.Select</p>
+
+                    <div class="time-left-wrap"><div class="@item.Staus"></div><span class="time-left"></span></div>
+
+                    <div class="card_box_label @item.Select "></div>
+
+                    <table class="table">
+                        <h1 class="todo-card-title todoTitle">@item.Title</h1>
+                        <p class="CardText">@item.Text</p>
+                        <div class="CreationDate">
+
+                            <span>
+                                <i class="far fa-clock"></i>
+                                <span class="CreationDateSort">
+                                    @item.CreationDate.ToString("yyyy-MM-dd HH:mm")
+                                </span>
+                            </span>
+                            <span class="due-date">@item.Time.ToString("yyyy-MM-dd HH:mm")</span>
+                        </div>
+                        <div class="actions">
+                            <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>
+                            <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </table>
+                </div>
+            </div>
+
+
+        }
+
+
+    </div>

@@ -1,0 +1,575 @@
+﻿.preloader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 99999999999999999999999999999999999999;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-width: 1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #fff;
+}
+
+.label_none {
+    visibility: hidden !important;
+}
+
+.hiden {
+    visibility: hidden;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+button:active,
+button:focus {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+.button {
+    position: relative;
+    all: unset;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    position: relative;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: 3px solid #afafaf;
+    box-shadow: inset -2px -2px 5px 0px #ffffff82, inset 1px 1px 9px 0px #000000, -1px -1px 2px 0px #ffffff38, 1px 1px 4px 0px #000000;
+    font-size: 26px;
+    color: #000;
+    text-shadow: 2px 2px 1px #00000038;
+    transition: .3s;
+}
+
+.button i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.sort {
+    margin: auto;
+    font-size: 35px;
+}
+
+.control-label {
+    height: 100%;
+}
+
+.sort-by-button-group {
+    position: fixed;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 100;
+    left: 50%;
+    top: -100px;
+    backdrop-filter: blur(4px);
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    border-radius: 12px;
+}
+
+.sort_open {
+    animation: sort_open .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.sort_close {
+    animation: sort_close .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.is-checked {
+    box-shadow: 0 0 12px 0px #ffffff;
+    text-shadow: none;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Comfortaa', cursive;
+}
+
+.background {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #1f1f1f;
+    z-index: -999999999;
+}
+
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.todo-card-title {
+    font-family: 'Pattaya', sans-serif;
+}
+
+.main_content {
+    position: relative;
+    margin-top: 140px;
+    height: 100%;
+}
+
+header {
+    box-shadow: 0 0 20px 4px #0000007d;
+    z-index: 999999999999999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    backdrop-filter: blur(20px);
+    height: 80px;
+    background: #0000001f;
+}
+
+.header_container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    vertical-align: central;
+}
+
+.logo {
+    height: 70px;
+    position: absolute;
+    left: 15px;
+    top: 4px;
+}
+
+.header_add {
+    color: #fff;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 32px;
+    transition: .3s;
+    text-decoration: none;
+    position: absolute;
+    right: 3.5%;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 99999999999999;
+}
+
+.close_CreateMenu {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    color: #5f2b2b;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 30px;
+    transition: .3s;
+    text-shadow: 0px 6px #000000;
+}
+
+.close_CreateMenu:hover {
+    color: #ff0000;
+    text-shadow: 0px 0px #000000;
+    bottom: 27px;
+}
+
+.btn_Add_Card {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 54px;
+    transition: .3s;
+    text-shadow: 0px 6px #000000;
+    position: absolute;
+    right: 50%;
+    bottom: 30px;
+    transform: translateX(50%);
+    transition: .3s;
+}
+
+.btn_Add_Card:hover {
+    text-shadow: 0px 0px #000000;
+    bottom: 27px;
+}
+
+.header_add a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+
+.Create_wrap {
+    box-shadow: 0 0 20px 4px #00000033;
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 100px 30px 0px 30px;
+    background: #00000057;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    visibility: hidden;
+}
+
+.Edit_Wrap {
+    box-shadow: 0 0 20px 4px #00000033;
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 100px 30px 0px 30px;
+    background: #00000057;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    visibility: visible;
+}
+
+.form_flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 120px;
+}
+
+.Input_set {
+    height: 100%;
+}
+
+.Create_wrap_open {
+    animation: Create_wrap_open .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.Create_wrap_close {
+    animation: Create_wrap_close .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.Create_inner {}
+
+.todo-wrap {}
+
+.todo-card {
+    position: relative;
+    background: #1f1f1f;
+    color: #fff;
+    padding: 0 25px 25px 25px;
+    margin: 20px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .7s;
+    box-shadow: inset -4px -4px 20px 0px #ffffff14, inset 4px 4px 20px 0px #00000096, -1px -1px 12px 0px #ffffff14, 1px 1px 12px 0px #00000096;
+}
+
+.stretch-card {
+    position: absolute;
+    left: 50%;
+    top: 17px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    visibility: hidden;
+    transition: .3s;
+    transform-origin: center;
+}
+
+.stretch-card:hover {
+    transition: .7s;
+    filter: drop-shadow(0px 0px 4px #ffffffc4);
+}
+
+.stretch {
+    background: url("/img/s.svg") no-repeat center;
+    background-size: cover;
+}
+
+.minimize {
+    background: url("/img/b.svg") no-repeat center;
+    background-size: cover;
+}
+
+.todo-card:hover {
+    box-shadow: rgb(255 255 255 / 8%) 4px 4px 20px 0px inset, rgba(0, 0, 0, 0.59) -4px -4px 20px 0px inset, rgb(0 0 0 / 8%) 6px 7px 3px 0px;
+}
+
+.todo-card:hover .CardText {
+    transform: scale(1.02);
+}
+
+.todo-card:hover .todo-card-title {
+    text-shadow: 0px 0px black;
+}
+
+.todo-card:hover .CreationDate {
+    box-shadow: 0px 0px 0px #000;
+}
+
+.todo-card:hover .card_box_label {
+    box-shadow: 0px 0px 0px #000;
+}
+
+.CardText {
+    transition: .7s;
+    margin-bottom: 20px;
+    color: #9c9c9c;
+}
+
+.todo-card-title {
+    transition: .7s;
+    text-shadow: 0px 6px black;
+    margin-top: -25px;
+}
+
+.time-left-wrap {
+    position: absolute;
+    display: flex;
+    left: 20px;
+    top: 16px;
+}
+
+.pause {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url("/img/pause.svg") no-repeat center;
+    background-size: cover;
+}
+
+.done {
+    position: relative;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url("/img/done.svg") no-repeat center;
+    background-size: cover;
+}
+
+.card_box_label {
+    font-size: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    animation: label 3s ease-in-out;
+    animation-iteration-count: infinite;
+    transition: .7s;
+}
+
+.not executed {}
+
+.none {}
+
+.important {
+    box-shadow: 0px 6px 0px #000;
+    box-shadow: 0 0 20px 0px #ff0000;
+    background: #ff0000;
+}
+
+.not_important {
+    box-shadow: 0px 6px 0px #000;
+    box-shadow: 0 0 20px 0px #00ff21;
+    background: #00ff21;
+}
+
+.CreationDate {
+    background: #000;
+    font-size: 11px;
+    color: #fff;
+    left: 20px;
+    position: absolute;
+    bottom: 13px;
+    border: 1px solid #fff;
+    padding: 0 0 0 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 6px 0px #000;
+    transition: .7s;
+}
+
+.CreationDate span {
+    font-size: 13px:
+}
+
+.due-date {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding: 2px 5px 2px 16px;
+    border-radius: 10px 0 0 0;
+    margin-left: 16px;
+}
+
+.due-date::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    right: 100%;
+}
+
+.due-date::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #000000;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    right: 100%;
+    border-radius: 0 0 9px 0;
+}
+
+.actions {
+    visibility: hidden;
+    right: 20px;
+    position: absolute;
+    bottom: 10px;
+    padding: 0 5px;
+    border-radius: 10px;
+}
+
+.actions i:hover {
+    transition: .7s;
+    text-shadow: 0px 2px black;
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 4px #ffffffc4);
+}
+
+.actions i {
+    text-shadow: 0px 0px black;
+    transition: .3s;
+    font-size: 20px;
+    color: #fff;
+}
+
+.actions i:last-child {
+    margin-left: 20px;
+}
+
+.todo-card:hover .actions {
+    visibility: visible;
+}
+
+.todo-card:hover .stretch-card {
+    visibility: visible;
+}
+
+@media (max-width: 991px) {
+    .header_add {
+        right: 4.5%;
+    }
+
+    .stretch-card {
+        display: none;
+    }
+
+    .actions {
+        visibility: visible;
+    }
+
+    .header_container {
+        padding-left: 15px;
+        justify-content: start;
+    }
+}
+
+@media (max-width: 767px) {
+    .todo-wrap {
+        padding: 0;
+    }
+
+    .header_add {
+        right: 6.5%;
+    }
+}
+
+@media (max-width: 575px) {
+    .button {
+        width: 30px;
+        height: 30px;
+        font-size: 17px;
+    }
+
+    .header_add {
+        right: 7%;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .CreationDate span {
+        margin: auto 0;
+    }
+
+    .CreationDate {
+        position: relative;
+        left: 0;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .due-date {
+        height: 18px;
+        width: 50%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 354px) {
+
+    .button {
+        margin: 0 5px;
+    }
+
+    .CreationDate {
+        padding: 0;
+    }
+
+    .CreationDate span {
+        margin: auto 0;
+        width: 100%;
+    }
+
+    .due-date {
+        height: 0;
+        width: 50%;
+        margin-left: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+}
